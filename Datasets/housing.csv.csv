@@ -1,0 +1,1048 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "46fba794-4328-4613-9271-c779ff4ba779",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Standard Data Science Helpers\n",
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "import scipy\n",
+    "\n",
+    "import featuretools as ft\n",
+    "\n",
+    "# Graphic libraries\n",
+    "import matplotlib as plt\n",
+    "%matplotlib inline\n",
+    "plt.style.use('fivethirtyeight');plt.rcParams['font.size']=18\n",
+    "import seaborn as sns\n",
+    "\n",
+    "# Extra options\n",
+    "pd.options.display.max_rows = 10\n",
+    "# Show all code cells outputs\n",
+    "from IPython.core.interactiveshell import InteractiveShell\n",
+    "InteractiveShell.ast_node_interactivity = 'all'\n",
+    "\n",
+    "import cufflinks\n",
+    "cufflinks.go_offline()\n",
+    "cufflinks.set_config_file(world_readable=True, theme='pearl')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4d2a1efe-5afd-4154-87f1-b1ca7f566672",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from django.urls import path\n",
+    "from .views import ApiQrCode\n",
+    "\n",
+    "app_name = 'api_app'\n",
+    "\n",
+    "urlpatterns = [\n",
+    "    path('qrcode/', ApiQrCode.as_view(), name='qrcode'),\n",
+    "]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "359fa7d8-b17b-4ca3-806b-392a9b180fad",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Standard plotly imports\n",
+    "import plotly.plotly as py\n",
+    "import plotly.graph_objs as go\n",
+    "from plotly.offline import iplot\n",
+    "# Using cufflinks in offline mode\n",
+    "import cufflinks\n",
+    "cufflinks.go_offline()\n",
+    "# Set the global theme for cufflinks\n",
+    "cufflinks.set_config_file(world_readable=True, theme='pearl', offline=True"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a4373240-169b-47ae-b944-22312a1db26c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Standard Plotly imports\n",
+    "import plotly.plotly as py\n",
+    "import plotly.graph_objs as go\n",
+    "from plotly.offline import iplot\n",
+    "# Using Cufflinks in offline mode\n",
+    "import cufflinks\n",
+    "cufflinks.go_offline()\n",
+    "# Set the global theme for Cufflinks\n",
+    "cufflinks.set_config_file(world_readable=True, theme='pearl', offline=True)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1e7b8c31-9df8-48bf-95cb-9c5289ac68aa",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "https://www.bloglines.com/web?ad=PushNotifications&an=pushly&ag=fw107&pcid=1-s-BookaFlightHowtoFlyforLess-20230725&country_old=Taiwan&subscriber_uid_old=ba9feff9-b8e2-d13a-375b-a4ef84816a47&id_site_old=25653&category=living&o=1672961&rch=ch7479&ueid=f308b35e-0cca-4b6e-a525-be25b1d7d385&pvid=60F6E9D0-B70A-4EDF-A22C-8250E057A3A6&qo=contentGoogleRelatedSearch&q=Cheap+Airline+Tickets&rsToken=ChMI8aT1w-X2gQMVPpdWAR2jTAFvEloBxDSP9YxvxvUJk_Opm2pqW5_EfXh38LU4p78n-t6Wx34LWMOUIgBV_87WUgIQZHb562y_QquQPpP2GYcgMtZ2EIFA6qjJ25Z6eX4i0Cwj1ifDDG7VJ11tFDM&nb=0&rurl=https%3A%2F%2Fwww.simpli.com%2F&nm=28&nx=183&ny=25&is=817x372&clkt=184"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "91aa7766-8ac3-4b13-a512-1eaa89d3901f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from urllib.parse import parse_qs, urlparse\n",
+    "\n",
+    "url = \"DDG7VJ11tFDM&nb=0&rurl=https%3A%2F%2Fwww.simpli.com%2F&nm=28&nx=183&ny=25&is=817x372&clkt=184\"\n",
+    "\n",
+    "# Parse the query string\n",
+    "query_string = urlparse(url).query\n",
+    "query_params = parse_qs(query_string)\n",
+    "\n",
+    "# Extract the value of the 'rurl' parameter\n",
+    "rurl_value = query_params.get('rurl', [''])[0]\n",
+    "\n",
+    "print(rurl_value)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d2f8af4a-b8f8-4da2-a01d-eab4c9f48c81",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create a virtual environment named 'myenv'\n",
+    "python -m venv myenv\n",
+    "\n",
+    "# Activate the environment\n",
+    "myenv\\Scripts\\activate.bat"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0d7572ba-f06a-4a02-be18-2e88681ab95b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "!python -m venv myenv\n",
+    "!myenv\\Scripts\\activate.bat"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "42425c1c-f019-489b-8ce0-0c075dc6a198",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pip install Django==4.2.6"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bdcb60a0-e2a1-40c1-82fd-806ffdd96738",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pip install djangorestframework==3.14.0"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "578f5b50-c654-4233-a0e0-ecbb3e4e4731",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pip install psycopg2-binary==2.9.9"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e49a6bf7-8b3e-4343-b53f-b4b940e0db68",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pip install whitenoise==6.6.0"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a424ff3b-e063-4e11-9daf-64c9759bd38b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pip install python-dotenv==1.0.0"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "39da6935-7640-4469-8033-7affe3b49f70",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pip install qrcode==7.4.2 pillow==9.5.0"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "855c560b-550b-456e-a0aa-ed6a5dc3c9f5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "django-admin startproject api_project ."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "822f5667-4738-47fa-8470-0edcdd586fa4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "django-admin startproject api_project ."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f983e4f0-e66b-42d7-a94e-7dbadb8a2fdf",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "$ cd /path/to/project/directory\n",
+    "$ django-admin startproject api_project ."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "094cd15d-194f-4b14-b9b0-6554f48e35f7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import os\n",
+    "from django.core.management import execute_from_command_line\n",
+    "\n",
+    "def create_django_project(project_name, project_directory):\n",
+    "    # Create the project directory if it doesn't exist\n",
+    "    os.makedirs(project_directory, exist_ok=True)\n",
+    "\n",
+    "    # Change the current working directory to the project directory\n",
+    "    os.chdir(project_directory)\n",
+    "\n",
+    "    # Create the Django project using the execute_from_command_line function\n",
+    "    execute_from_command_line(['django-admin', 'startproject', project_name])\n",
+    "\n",
+    "# Usage example\n",
+    "project_name = 'api_project'\n",
+    "project_directory = '/path/to/project/directory'\n",
+    "create_django_project(project_name, project_directory)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "82600fd4-3e96-4eba-a348-de5a93344e89",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "django-admin startapp api_app"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e7e7b52d-b3bc-4cd3-a8bd-049a043452e3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from pathlib import Path"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2a80e014-4ddf-44ad-a7f3-f6edb99e05f9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# settings.py\n",
+    "import os\n",
+    "from dotenv import load_dotenv\n",
+    "\n",
+    "load_dotenv()\n",
+    "\n",
+    "BASE_DIR = Path(__file__).resolve().parent.parent\n",
+    "SECRET_KEY = str(os.getenv('SECRET_KEY'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "73203f6f-647d-4b90-88c0-a7cbe64bf4cc",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# settings.py\n",
+    "import os\n",
+    "from dotenv import load_dotenv\n",
+    "\n",
+    "load_dotenv()\n",
+    "\n",
+    "BASE_DIR = os.path.dirname(os.path.abspath(__name__))\n",
+    "SECRET_KEY = str(os.getenv('SECRET_KEY'))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5f390e41-21e8-4c92-8d78-a9c17cac8264",
+   "metadata": {},
+   "source": [
+    "# settings.py\n",
+    "MIDDLEWARE = [\n",
+    "    'django.middleware.security.SecurityMiddleware',\n",
+    "    'whitenoise.middleware.WhiteNoiseMiddleware', # Our aesthetic touch!\n",
+    "    ... # Other middleware entries\n",
+    "]# Assistant\n",
+    "The error occurs because the command you are trying to execute is not valid Python code. \n",
+    "\n",
+    "The command `django-admin startproject api_project .` is a command-line command used to create a new Django project. It should be executed in the command-line interface (CLI) or terminal, not in a Python code cell.\n",
+    "\n",
+    "To fix this error, you need to open a comman# settings.py\n",
+    "MIDDLEWARE = [\n",
+    "    'django.middleware.security.SecurityMiddleware',\n",
+    "    'whitenoise.middleware.WhiteNoiseMiddleware', # Our aesthetic touch!\n",
+    "    ... # Other middleware entries\n",
+    "]d-line interface or terminal and execute the command there.\n",
+    "\n",
+    "Would you like me to provide an example of how to execute this command in a command-line interface?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3aefa1ca-7253-48f5-9288-bb6a6b272cd5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import os\n",
+    "\n",
+    "DATABASES = {\n",
+    "    'default': {\n",
+    "        'ENGINE': 'django.db.backends.postgresql_psycopg2',\n",
+    "        'NAME': str(os.getenv('DB_NAME')),\n",
+    "        'PASSWORD': str(os.getenv('DB_PASSWORD')),\n",
+    "        'USER': str(os.getenv('DB_USER')),\n",
+    "        'HOST': str(os.getenv('DB_HOST')),\n",
+    "        'PORT': str(os.getenv('DB_PORT')),\n",
+    "    }\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "edcb9de6-67b3-4dec-acb5-7622976c912c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import os\n",
+    "\n",
+    "DATABASES = {\n",
+    "    'default': {\n",
+    "        'ENGINE': 'django.db.backends.postgresql_psycopg2',\n",
+    "        'NAME': str(os.getenv('DB_NAME')),\n",
+    "        'PASSWORD': str(os.getenv('DB_PASSWORD')),\n",
+    "        'USER': str(os.getenv('DB_USER')),\n",
+    "        'HOST': str(os.getenv('DB_HOST')),\n",
+    "        'PORT': str(os.getenv('DB_PORT')),\n",
+    "    }\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "be6284f0-3478-4fbf-b97c-26d05614213c",
+   "metadata": {},
+   "source": [
+    "SECRET_KEY=yoursecretkey\n",
+    "DB_NAME=yourdbname\n",
+    "DB_PASSWORD=yourdbpassword\n",
+    "DB_USER=yourdbuser\n",
+    "DB_HOST=yourdbhost\n",
+    "DB_PORT=yourdbport"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a8be2508-91f3-4e7f-b1cc-36e2401d42ab",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# settings.py\n",
+    "REST_FRAMEWORK = {\n",
+    "    'DEFAULT_AUTHENTICATION_CLASSES': [\n",
+    "        'rest_framework.authentication.TokenAuthentication',  # Our chosen instrument for secure authentication.\n",
+    "        # Feel free to introduce other authentication instruments here.\n",
+    "    ],\n",
+    "    'DEFAULT_RENDERER_CLASSES': [\n",
+    "        'rest_framework.renderers.JSONRenderer',  # Ensures our tune is melodious and JSON-formatted.\n",
+    "        # Got other rendering preferences? Add them right in.\n",
+    "    ],\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bdb4ec51-2ec5-4d11-bd79-d1a9ebaad425",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "STATIC_URL = '/static/'\n",
+    "\n",
+    "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # A grand stage for our static performers.\n",
+    "\n",
+    "STATICFILES_DIRS = [\n",
+    "    os.path.join(BASE_DIR, 'static')  # Our backstage, where static files are prepped.\n",
+    "]\n",
+    "\n",
+    "STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # A tool to ensure every performance is crisp.\n",
+    "\n",
+    "MEDIA = os.path.join(BASE_DIR, 'media')  # A special corner for our media to shine."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ddfef12a-3847-4037-ad6f-e370e8b87ce6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from django.contrib import admin\n",
+    "from django.urls import path, include\n",
+    "from rest_framework.authtoken.views import obtain_auth_token\n",
+    "\n",
+    "urlpatterns = [\n",
+    "    path('admin/', admin.site.urls),  # The city hall of our Django city.\n",
+    "    path('api/', include('api_app.urls')),  # Our main boulevard for API interactions.\n",
+    "    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),  # A secure checkpoint for authentic visitors.\n",
+    "]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "afe4dc7d-e0ee-4d6e-80ec-a0b31cee8348",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from bs4 import BeautifulSoup\n",
+    "\n",
+    "html = \"\"\"\n",
+    "<html>\n",
+    "<body>\n",
+    "<!--StartFragment-->\n",
+    "\n",
+    "TOP STORIES FOR VICTOR Are PhDs a scam?Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021I started my PhD because I wanted to become a university professor and it was a prerequisite. It would have been nice if someone had mentioned to me before starting that th... Read more » | TOP STORIES FOR VICTOR Are PhDs a scam?Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021I started my PhD because I wanted to become a university professor and it was a prerequisite. It would have been nice if someone had mentioned to me before starting that th... Read more » |   |   |   | TOP STORIES FOR VICTOR | TOP STORIES FOR VICTOR |   |   |   | Are PhDs a scam? | Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021 | Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021 | I started my PhD because I wanted to become a university professor and it was a prerequisite. It would have been nice if someone had mentioned to me before starting that th... Read more »\n",
+    "-- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --\n",
+    "TOP STORIES FOR VICTOR Are PhDs a scam?Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021I started my PhD because I wanted to become a university professor and it was a prerequisite. It would have been nice if someone had mentioned to me before starting that th... Read more » |   |   |   | TOP STORIES FOR VICTOR | TOP STORIES FOR VICTOR |   |   |   | Are PhDs a scam? | Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021 | Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021 | I started my PhD because I wanted to become a university professor and it was a prerequisite. It would have been nice if someone had mentioned to me before starting that th... Read »\n",
+    "  |  \n",
+    " \n",
+    " \n",
+    "TOP STORIES FOR VICTOR | TOP STORIES FOR VICTOR |  \n",
+    "TOP STORIES FOR VICTOR |  \n",
+    " \n",
+    " \n",
+    "Are PhDs a scam?\n",
+    "Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021 | Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021\n",
+    "Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021\n",
+    "I started my PhD because I wanted to become a university professor and it was a prerequisite. It would have been nice if someone had mentioned to me before starting that th... Read »\n",
+    "\n",
+    "<!--EndFragment-->\n",
+    "</body>\n",
+    "</html>\n",
+    "\"\"\"\n",
+    "\n",
+    "soup = BeautifulSoup(html, 'html.parser')\n",
+    "text = soup.get_text()\n",
+    "print(text)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "35783035-e08a-49ad-a635-68e2cba96833",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from bs4 import BeautifulSoup\n",
+    "\n",
+    "html = \"\"\"\n",
+    "<html>\n",
+    "<body>\n",
+    "<!--StartFragment-->\n",
+    "\n",
+    "TOP STORIES FOR VICTOR Are PhDs a scam?Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021I started my PhD because I wanted to become a university professor and it was a prerequisite. It would have been nice if someone had mentioned to me before starting that th... Read more » | TOP STORIES FOR VICTOR Are PhDs a scam?Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021I started my PhD because I wanted to become a university professor and it was a prerequisite. It would have been nice if someone had mentioned to me before starting that th... Read more » |   |   |   | TOP STORIES FOR VICTOR | TOP STORIES FOR VICTOR |   |   |   | Are PhDs a scam? | Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021 | Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021 | I started my PhD because I wanted to become a university professor and it was a prerequisite. It would have been nice if someone had mentioned to me before starting that th... Read »\n",
+    "-- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --\n",
+    "TOP STORIES FOR VICTOR Are PhDs a scam?Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021I started my PhD because I wanted to become a university professor and it was a prerequisite. It would have been nice if someone had mentioned to me before starting that th... Read » |   |   |   | TOP STORIES FOR VICTOR | TOP STORIES FOR VICTOR |   |   |   | Are PhDs a scam? | Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021 | Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021 | I started my PhD because I wanted to become a university professor and it was a prerequisite. It would have been nice if someone had mentioned to me before starting that th... Read »\n",
+    "  |  \n",
+    " \n",
+    " \n",
+    "TOP STORIES FOR VICTOR | TOP STORIES FOR VICTOR |  \n",
+    "TOP STORIES FOR VICTOR |  \n",
+    " \n",
+    " \n",
+    "Are PhDs a scam?\n",
+    "Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021 | Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021\n",
+    "Corrin Lakeland, PhD Computer Science, University of Otago (2006) • Updated August 19, 2021\n",
+    "I started my PhD because I wanted to become a university professor and it was a prerequisite. It would have been nice if someone had mentioned to me before starting that th... Read »\n",
+    "\n",
+    "<!--EndFragment-->\n",
+    "</body>\n",
+    "</html>\n",
+    "\"\"\"\n",
+    "\n",
+    "soup = BeautifulSoup(html, 'html.parser')\n",
+    "text = soup.get_text()\n",
+    "print(text)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3c4fa1a3-4371-4894-83d8-f9989d4ec68f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# We're importing a bunch of tools that help with user authentication, \n",
+    "# creating QR codes, handling requests and responses, and working with images.\n",
+    "from rest_framework.authentication import TokenAuthentication\n",
+    "from rest_framework.permissions import IsAuthenticated\n",
+    "from rest_framework.views import APIView\n",
+    "from rest_framework.response import Response\n",
+    "import qrcode\n",
+    "from django.http import HttpResponse\n",
+    "from rest_framework.parsers import JSONParser, FormParser, MultiPartParser\n",
+    "from PIL import Image, ImageDraw, ImageFont\n",
+    "from .serializers import QrCodeSerializer\n",
+    "from rest_framework import status\n",
+    "\n",
+    "# These are some custom tools specifically for our app.\n",
+    "from .permissions import IsAuthenticatedOrFromRapidAPI\n",
+    "from .authentications import RapidAPIAuthentication"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "be2413a6-853b-4fc9-b701-9b5359d5d1e2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import os\n",
+    "from django.conf import settings\n",
+    "\n",
+    "# Set the DJANGO_SETTINGS_MODULE environment variable\n",
+    "os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'your_project.settings')\n",
+    "\n",
+    "# Configure the Django settings\n",
+    "settings.configure()\n",
+    "\n",
+    "# Now you can import the necessary modules and classes\n",
+    "from rest_framework.authentication import TokenAuthentication\n",
+    "from rest_framework.permissions import IsAuthenticated\n",
+    "from rest_framework.views import APIView\n",
+    "from rest_framework.response import Response\n",
+    "import qrcode\n",
+    "from django.http import HttpResponse\n",
+    "from rest_framework.parsers import JSONParser, FormParser, MultiPartParser\n",
+    "from PIL import Image, ImageDraw, ImageFont\n",
+    "from .serializers import QrCodeSerializer\n",
+    "from rest_framework import status\n",
+    "from .permissions import IsAuthenticatedOrFromRapidAPI\n",
+    "from .authentications import RapidAPIAuthentication"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "da58d95a-ca6f-4ef4-ba0d-84ca468eecfb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class ApiQrCode(APIView):\n",
+    "    # Setting up the parsers. It's like choosing the language we want to communicate in.\n",
+    "    parser_classes = (JSONParser, FormParser, MultiPartParser)\n",
+    "    \n",
+    "    # These are our security guards, making sure only the right folks get in.\n",
+    "    authentication_classes = [TokenAuthentication, RapidAPIAuthentication]\n",
+    "    permission_classes = [IsAuthenticatedOrFromRapidAPI]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "df15f5cc-0a55-4395-bdea-e5ef639cd556",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "    def post(self, request):\n",
+    "        # This is us reading the order and making sure it makes sense.\n",
+    "        serializer = QrCodeSerializer(data=request.data)\n",
+    "        \n",
+    "        # If the order is good...\n",
+    "        if serializer.is_valid():\n",
+    "            # We get the specific ingredients for our dish.\n",
+    "            url = serializer.validated_data['url']\n",
+    "            color = serializer.validated_data.get('color', None)\n",
+    "            company_name = serializer.validated_data.get('company_name', None)\n",
+    "            \n",
+    "            # If they didn't specify a color, we just default to classic black.\n",
+    "            if color is None:\n",
+    "                color = '#000000'\n",
+    "            \n",
+    "            # Here's where we start making the QR code, based on their order.\n",
+    "            qr = qrcode.QRCode(version=5, box_size=10, border=4)\n",
+    "            \n",
+    "            # We put their URL into the QR code.\n",
+    "            qr.add_data(url)\n",
+    "            \n",
+    "            # And now we cook it up!\n",
+    "            qr.make(fit=True)\n",
+    "            img = qr.make_image(fill_color=color, back_color='white')\n",
+    "            \n",
+    "            # We're not done! We can add some garnish, too.\n",
+    "            pil_img = img.convert('RGBA')\n",
+    "            draw = ImageDraw.Draw(pil_img)\n",
+    "            \n",
+    "            # Figuring out how much space we have for the garnish.\n",
+    "            width, height = pil_img.size\n",
+    "            \n",
+    "            # If they gave us a company name, we add this as a final touch!\n",
+    "            if company_name is not None:\n",
+    "                # We make sure the name looks good on the QR code, nice and centered.\n",
+    "                font_size = int(min(width, height) / 30)\n",
+    "                font = ImageFont.truetype('api_app/Lato-Bold.ttf', font_size)\n",
+    "                text_width, text_height = draw.textsize(company_name, font=font)\n",
+    "                \n",
+    "                # We place the name right in the middle.\n",
+    "                text_x = int((width - text_width) / 2)\n",
+    "                text_y = int((height - text_height) / 2)\n",
+    "                \n",
+    "                # Add a nice background for the text to make it stand out.\n",
+    "                padding = 10\n",
+    "                rect_x1 = text_x - padding\n",
+    "                rect_y1 = text_y - padding\n",
+    "                rect_x2 = text_x + text_width + padding\n",
+    "                rect_y2 = text_y + text_height + padding\n",
+    "                draw.rectangle((rect_x1, rect_y1, rect_x2, rect_y2), fill='white')\n",
+    "                \n",
+    "                # And finally, we write the company name onto the QR code.\n",
+    "                draw.text((text_x, text_y), company_name, font=font, fill='black')\n",
+    "            \n",
+    "            # The dish is ready to serve!\n",
+    "            img = pil_img\n",
+    "            \n",
+    "            # We serve our dish on a nice plate, in this case, an 'image/png' plate.\n",
+    "            response = HttpResponse(content_type='image/png')\n",
+    "            img.save(response, 'PNG')\n",
+    "            \n",
+    "            return response\n",
+    "        \n",
+    "        # If there was a problem with the order...\n",
+    "        else:\n",
+    "            # We kindly let them know what was wrong.\n",
+    "            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ed4c0107-7ef8-4405-9d3e-5aa752f2d22b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "font = ImageFont.truetype('api_app/Lato-Bold.ttf', font_size)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a36d709f-bfc5-44af-977b-2dc544026f17",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Let's begin by importing the tools we'll need on our journey!\n",
+    "from rest_framework.authentication import TokenAuthentication\n",
+    "from rest_framework.permissions import IsAuthenticated\n",
+    "from rest_framework.views import APIView\n",
+    "from rest_framework.response import Response\n",
+    "import qrcode  # Our magic wand to make QR codes\n",
+    "from django.http import HttpResponse\n",
+    "from rest_framework.parsers import JSONParser, FormParser, MultiPartParser\n",
+    "from PIL import Image, ImageDraw, ImageFont  # Our artistic tools for image crafting\n",
+    "from .serializers import QrCodeSerializer  # This will help us understand incoming data\n",
+    "from rest_framework import status  # To talk back in HTTP language\n",
+    "\n",
+    "# Some custom tools we've built for our special journey\n",
+    "from .permissions import IsAuthenticatedOrFromRapidAPI\n",
+    "from .authentications import RapidAPIAuthentication\n",
+    "\n",
+    "# Welcome to the heart of our journey, the QR code forest!\n",
+    "class ApiQrCode(APIView):\n",
+    "    # Here we decide which languages we're comfortable speaking with our visitors.\n",
+    "    parser_classes = (JSONParser, FormParser, MultiPartParser)\n",
+    "    \n",
+    "    # Our friendly forest guards who check the visitor's passes.\n",
+    "    authentication_classes = [TokenAuthentication, RapidAPIAuthentication]\n",
+    "    \n",
+    "    # Rules of the forest! Who's allowed and who's not.\n",
+    "    permission_classes = [IsAuthenticatedOrFromRapidAPI]\n",
+    "\n",
+    "    # When someone sends a postcard (POST request) to the forest...\n",
+    "    def post(self, request):\n",
+    "        # We try to understand their message using the QrCodeSerializer.\n",
+    "        serializer = QrCodeSerializer(data=request.data)\n",
+    "        \n",
+    "        # If we can understand their message...\n",
+    "        if serializer.is_valid():\n",
+    "            # We extract the important bits from their message.\n",
+    "            url = serializer.validated_data['url']\n",
+    "            color = serializer.validated_data.get('color', None)\n",
+    "            company_name = serializer.validated_data.get('company_name', None)\n",
+    "            \n",
+    "            # If they didn't mention a favorite color, we choose classic black.\n",
+    "            if color is None:\n",
+    "                color = '#000000'\n",
+    "            \n",
+    "            # Using our QR wand, we start crafting the magical QR code.\n",
+    "            qr = qrcode.QRCode(version=5, box_size=10, border=4)\n",
+    "            qr.add_data(url)  # We pour the URL essence into the mix.\n",
+    "            qr.make(fit=True)  # We make sure it's a perfect fit!\n",
+    "            img = qr.make_image(fill_color=color, back_color='white')  # The QR code comes to life!\n",
+    "            \n",
+    "            # We use some artistic tools to refine our creation.\n",
+    "            pil_img = img.convert('RGBA')\n",
+    "            draw = ImageDraw.Draw(pil_img)\n",
+    "            width, height = pil_img.size  # Checking the canvas size\n",
+    "            \n",
+    "            # If they whispered a company name, we inscribe it onto the QR code.\n",
+    "            if company_name is not None:\n",
+    "                # Adjusting the font size to make it look perfect!\n",
+    "                font_size = int(min(width, height) / 30)\n",
+    "                font = ImageFont.truetype('api_app/Lato-Bold.ttf', font_size)\n",
+    "                text_width, text_height = draw.textsize(company_name, font=font)\n",
+    "                \n",
+    "                # Finding the perfect spot for the name.\n",
+    "                text_x = int((width - text_width) / 2)\n",
+    "                text_y = int((height - text_height) / 2)\n",
+    "                \n",
+    "                # We add a small glowing rectangle behind the name to make it stand out.\n",
+    "                padding = 10\n",
+    "                rect_x1 = text_x - padding\n",
+    "                rect_y1 = text_y - padding\n",
+    "                rect_x2 = text_x + text_width + padding\n",
+    "                rect_y2 = text_y + text_height + padding\n",
+    "                draw.rectangle((rect_x1, rect_y1, rect_x2, rect_y2), fill='white')\n",
+    "                \n",
+    "                # With a steady hand, we write the company name onto the QR code.\n",
+    "                draw.text((text_x, text_y), company_name, font=font, fill='black')\n",
+    "            \n",
+    "            # Our QR code artwork is ready!\n",
+    "            img = pil_img\n",
+    "            \n",
+    "            # We lovingly place it on a digital canvas and present it to our visitor.\n",
+    "            response = HttpResponse(content_type=\"image/png\")\n",
+    "            img.save(response, \"PNG\")\n",
+    "            return response\n",
+    "        else:\n",
+    "            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ef72b5ce-b811-415e-b4d0-9783db151211",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from rest_framework import serializers"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "13ce7443-d8a3-449f-bd3e-42ebdd4ac01a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from rest_framework import serializers"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a489fd22-7579-4069-9868-c53a8b5cb4f8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from rest_framework import serializers"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "39adda4d-a88c-4f1f-9fb5-75d763b0bcb3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pip install djangorestframework"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5170de1b-36aa-49f7-9d1d-9b5fb2387e05",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pip install djangorestframework\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ad6f4475-39e4-44b6-b73b-4236fd689bcd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import smtplib\n",
+    "from email.message import EmailMessage\n",
+    "\n",
+    "email_content = \"\"\"\n",
+    "Hi [Name],\n",
+    "Just a quick reminder about our club event on [Date]!\n",
+    "\"\"\"\n",
+    "\n",
+    "msg = EmailMessage()\n",
+    "msg['From'] = 'club@example.com'\n",
+    "msg['Subject'] = 'Event Reminder'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "60598573-b320-45cb-99e0-34411caf8e65",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "for member, date in members.items():\n",
+    "    msg['To'] = member\n",
+    "    msg.set_content(email_content.replace('[Name]', member).replace('[Date]', date))\n",
+    "    with smtplib.SMTP('localhost') as s:\n",
+    "        s.send_message(msg)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f5fbe574-ef83-492d-862b-6b606a1417eb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import smtplib\n",
+    "from email.message import EmailMessage\n",
+    "\n",
+    "email_content = \"\"\"\n",
+    "Hi [Name],\n",
+    "Just a quick reminder about our club event on [Date]!\n",
+    "\"\"\"\n",
+    "\n",
+    "msg = EmailMessage()\n",
+    "msg['From'] = 'club@example.com'\n",
+    "msg['Subject'] = 'Event Reminder'\n",
+    "\n",
+    "members = {\n",
+    "    'John': '2022-01-15',\n",
+    "    'Jane': '2022-01-20',\n",
+    "    'Bob': '2022-01-25'\n",
+    "}\n",
+    "\n",
+    "for member, date in members.items():\n",
+    "    msg['To'] = member\n",
+    "    msg.set_content(email_content.replace('[Name]', member).replace('[Date]', date))\n",
+    "    with smtplib.SMTP('localhost') as s:\n",
+    "        s.send_message(msg)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f0ffa641-2fc0-44ef-87e2-0e987e3905f8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import smtplib\n",
+    "from email.message import EmailMessage\n",
+    "\n",
+    "email_content = \"\"\"\n",
+    "Hi [Name],\n",
+    "Just a quick reminder about our club event on [Date]!\n",
+    "\"\"\"\n",
+    "\n",
+    "msg = EmailMessage()\n",
+    "msg['From'] = 'club@example.com'\n",
+    "msg['Subject'] = 'Event Reminder"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "415ce41d-1823-4024-b3d4-76c54fe11a76",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "!pip install git+https://github.com/jtpio/jupyterlab-topbar.git"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "680850ca-761f-4fc1-8c1f-0e2031ce0b92",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# import the necessary libraries\n",
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "from IPython.core.display import display, HTML\n",
+    "display(HTML(\"<style>.container { width:90% !important; }</style>\"))\n",
+    "\n",
+    "# read the data \n",
+    "data = pd.read_csv('Housing.csv')\n",
+    "data.columns = data.columns.str.upper()   #convert the columns to uppercase \n",
+    "data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ef45a194-446f-4f24-9f6d-f00a6e90da26",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Import the necessary libraries\n",
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "from IPython.core.display import display, HTML\n",
+    "\n",
+    "# Set the Jupyter Notebook container width to 90%\n",
+    "display(HTML(\"<style>.container { width:90% !important; }</style>\"))\n",
+    "\n",
+    "# Read the data from 'Housing.csv'\n",
+    "data = pd.read_csv('USA_Housing.csv')\n",
+    "\n",
+    "# Convert the columns to uppercase\n",
+    "data.columns = data.columns.str.upper()\n",
+    "\n",
+    "# Display the DataFrame\n",
+    "data\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "989f18b5-ff79-4e0b-953c-7043eff83860",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Import the necessary libraries\n",
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "from IPython.core.display import display, HTML\n",
+    "\n",
+    "# Set the Jupyter Notebook container width to 90%\n",
+    "display(HTML(\"<style>.container { width:90% !important; }</style>\"))\n",
+    "\n",
+    "# Read the data from 'Housing.csv'\n",
+    "data = pd.read_csv('Housing.csv')\n",
+    "\n",
+    "# Convert the columns to uppercase\n",
+    "data.columns = data.columns.str.upper()\n",
+    "\n",
+    "# Display the DataFrame\n",
+    "data\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "745cb2a5-3467-436b-998b-9320e7f47b75",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Import the necessary libraries\n",
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "from IPython.core.display import display, HTML\n",
+    "\n",
+    "# Set the Jupyter Notebook container width to 90%\n",
+    "display(HTML(\"<style>.container { width:90% !important; }</style>\"))\n",
+    "\n",
+    "# GitHub URL to the raw CSV file\n",
+    "github_url = 'https://raw.githubusercontent.com/username/repository/master/Housing.csv'\n",
+    "\n",
+    "# Read the data from the GitHub URL\n",
+    "data = pd.read_csv(github_url)\n",
+    "\n",
+    "# Convert the columns to uppercase\n",
+    "data.columns = data.columns.str.upper()\n",
+    "\n",
+    "# Display the DataFrame\n",
+    "data\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "anaconda-panel-2023.05-py310",
+   "language": "python",
+   "name": "conda-env-anaconda-panel-2023.05-py310-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.4"
+  },
+  "toc-showcode": true
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
